@@ -1,22 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>CHIPOTLE CODES</title>
-  </head>
-  <body onload="outputCode()">
-  <h1>Lets get it!</h1>
+<head>
+    <title>chippy</title>
+</head>
+<body>
+    <h1>Lets get them 'ritos!!</h1>
     <p>
-      <a id="redirect" href="sms:888222;?&body=CODE"></a>
-
-      <script>
-        function outputCode() {
-          var url = new URL(window.location.href);
-          var code = url.searchParams.get("c");
-          console.log(code);
-          document.getElementById("redirect").href = "sms:888222;?&body=" + code;
-          document.getElementById('redirect').click();
-        }
-      </script>
+        <a id="redirect" href="#">Click here to send SMS</a>
     </p>
-  </body>
+
+    <script>
+        function outputCode() {
+            var url = new URL(window.location.href);
+            var code = url.searchParams.get("c");
+            console.log(code);
+            var smsLink = "sms:888222;?&body=" + code;
+            window.location.href = smsLink;
+        }
+
+        // Call the outputCode() function once the page is loaded
+        document.addEventListener("DOMContentLoaded", outputCode);
+    </script>
+</body>
 </html>
